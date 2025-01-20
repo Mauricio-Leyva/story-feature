@@ -37,7 +37,7 @@ A modern web implementation of ephemeral "Stories" similar to those found in pop
 
 Open `http://localhost:4321` in your browser
 
-📝 Usage
+## 📝 Usage
 - Click the camera button to add a new story
 - Click on any story preview to view it
 - Stories auto-advance after 5 seconds
@@ -45,7 +45,7 @@ Open `http://localhost:4321` in your browser
 - Stories automatically expire after 24 hours
 - Hover over a story preview to see the delete option
 
-🔧 Configuration
+## 🔧 Configuration
 The project uses the following key configurations:
 - Astro configuration in astro.config.mjs
 - TailwindCSS configuration in tailwind.config.mjs
