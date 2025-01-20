@@ -2,15 +2,12 @@
 
 A modern web implementation of ephemeral "Stories" similar to those found in popular social media platforms like Instagram and WhatsApp, built with Astro, React and TailwindCSS.
 
-![Stories Feature Demo](demo.gif)
-
 ## 🌟 Features
 
 - **Client-side Stories Implementation**: Pure frontend implementation of the Stories feature
 - **24-hour Expiration**: Stories automatically expire after 24 hours
 - **Image Upload**: Upload and preview images as stories
 - **Interactive Navigation**: 
-  - Touch/swipe gestures for mobile
   - Navigation arrows
   - Progress indicator
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
@@ -26,19 +23,19 @@ A modern web implementation of ephemeral "Stories" similar to those found in pop
 
 ## 🚀 Getting Started
 
-1. Clone the repository:
-```sh
-git clone <repository-url>
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Mauricio-Leyva/story-feature.git
 
-2. Install dependencies:
-```sh
-npm install
+2. **Install dependencies**:
+    ```bash
+    npm install
 
-3. Run the development server:
-```sh
-npm run dev
+3. **Run the development server**:
+    ```bash
+    npm run dev
 
-4. Open `http://localhost:4321` in your browser
+Open `http://localhost:4321` in your browser
 
 📝 Usage
 - Click the camera button to add a new story
