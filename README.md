@@ -8,7 +8,6 @@ A modern web implementation of ephemeral "Stories" similar to those found in pop
 - **24-hour Expiration**: Stories automatically expire after 24 hours
 - **Image Upload**: Upload and preview images as stories
 - **Interactive Navigation**: 
-  - Touch/swipe gestures for mobile
   - Navigation arrows
   - Progress indicator
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
