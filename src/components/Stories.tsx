@@ -164,18 +164,18 @@ const Stories: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-screen-lg mx-auto p-4">
+    <div className="w-full max-w-screen-lg mx-auto p-2 sm:p-4"> {/* Reducir padding en móviles */}
       {/* Stories list */}
-      <div className="flex items-center space-x-6 mb-8 overflow-x-auto pb-4 px-2 pt-3">
-        {/* Add story button */}
+      <div className="flex items-center space-x-4 sm:space-x-6 mb-4 sm:mb-8 overflow-x-auto pb-4 px-1 sm:px-2 pt-3">
+        {/* Add story button - más pequeño en móviles */}
         <button 
           onClick={() => fileInputRef.current?.click()}
-          className="w-20 h-20 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 p-0.5 
+          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 p-0.5 
                      hover:from-purple-600 hover:to-pink-600 transition-all duration-200 
                      flex-shrink-0 shadow-lg hover:scale-105 transform"
         >
           <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-            <Camera className="w-8 h-8 text-white" />
+            <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
           </div>
         </button>
         
@@ -187,12 +187,12 @@ const Stories: React.FC = () => {
           className="hidden"
         />
 
-        {/* Story circles */}
+        {/* Story circles - más pequeños en móviles */}
         {stories.map((story, index) => (
           <div key={story.id} className="relative group flex-shrink-0 pt-2 px-1">
             <button
               onClick={() => showStory(index)}
-              className="w-20 h-20 rounded-full p-0.5 bg-gradient-to-tr from-purple-500 to-pink-500
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-0.5 bg-gradient-to-tr from-purple-500 to-pink-500
                          hover:from-purple-600 hover:to-pink-600 transition-all duration-200 
                          transform hover:scale-105 shadow-lg"
             >
@@ -204,7 +204,7 @@ const Stories: React.FC = () => {
                 />
               </div>
             </button>
-            {/* Delete button */}
+            {/* Delete button - ajustado para móviles */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -212,7 +212,7 @@ const Stories: React.FC = () => {
                 setStories(updatedStories);
                 localStorage.setItem('stories', JSON.stringify(updatedStories));
               }}
-              className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full text-white 
+              className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-red-500 rounded-full text-white 
                          flex items-center justify-center opacity-0 group-hover:opacity-100 
                          transition-all duration-200 hover:bg-red-600 shadow-lg z-10"
             >
@@ -222,15 +222,15 @@ const Stories: React.FC = () => {
         ))}
       </div>
 
-      {/* Active story view */}
+      {/* Vista de historia activa - ajustes para móviles */}
       {activeStoryIndex >= 0 && (
         <div 
           className="fixed inset-0 bg-black/95 backdrop-blur-lg z-50 transition-all duration-300"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Progress bars */}
-          <div className="absolute top-4 left-4 right-4 flex space-x-2 z-10">
+          {/* Barras de progreso - ajustadas para móviles */}
+          <div className="absolute top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 flex space-x-1 sm:space-x-2 z-10">
             {stories.map((_, index) => (
               <div 
                 key={index}
@@ -254,7 +254,7 @@ const Stories: React.FC = () => {
             className="w-full h-full object-contain animate-fade-in"
           />
 
-          {/* Close button */}
+          {/* Botón de cierre - ajustado para móviles */}
           <button
             onClick={() => {
               if (window.storyAnimationFrame) {
@@ -262,35 +262,35 @@ const Stories: React.FC = () => {
               }
               setActiveStoryIndex(-1);
             }}
-            className="absolute top-8 right-4 text-white w-10 h-10 rounded-full 
+            className="absolute top-4 sm:top-8 right-2 sm:right-4 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full 
                        bg-gray-800/50 flex items-center justify-center hover:bg-gray-700/50 
-                       transition-all duration-200"
+                       transition-all duration-200 text-sm sm:text-base"
           >
             ✕
           </button>
 
-          {/* Navigation arrows */}
+          {/* Flechas de navegación - ajustadas para móviles */}
           {activeStoryIndex > 0 && (
             <button
               onClick={() => showStory(activeStoryIndex - 1)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full 
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full 
                          bg-gray-800/50 flex items-center justify-center hover:bg-gray-700/50 
                          transition-all duration-200 text-white"
               aria-label="Previous story"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           )}
 
           {activeStoryIndex < stories.length - 1 && (
             <button
               onClick={() => showStory(activeStoryIndex + 1)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full 
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full 
                          bg-gray-800/50 flex items-center justify-center hover:bg-gray-700/50 
                          transition-all duration-200 text-white"
               aria-label="Next story"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           )}
         </div>

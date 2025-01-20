@@ -54,5 +54,15 @@ The project uses the following key configurations:
 - TailwindCSS configuration in tailwind.config.mjs
 - TypeScript configuration in tsconfig.json
 
+## 📱 Mobile Adjustments
+
+- Reduced padding on mobile devices
+- Smaller add story button on mobile
+- Smaller story circles on mobile
+- Adjusted delete button for mobile
+- Adjusted active story view for mobile
+- Adjusted progress bars for mobile
+- Adjusted close button for mobile
+- Adjusted navigation arrows for mobile
 
 Built with ❤️ using [Astro](https://astro.build/)
